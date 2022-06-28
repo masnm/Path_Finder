@@ -8,5 +8,5 @@ Starter
 	$ make clean
 ```
 
-use `Space` key to reset and regenerate the maze and clena the path highliting
+use `Space` key to reset and regenerate the maze and clena the path highliting<br/>
 use `Mouse Left key` to first click select starting position and angain to select second position
