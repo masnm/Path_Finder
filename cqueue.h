@@ -17,12 +17,12 @@ typedef struct {
 /* Functions Defination */
 /* CREATE DESTROY */
 cqueue cqueue_create ( size_t item );
-void cqueue_destroy ( cqueue* vec );
+void cqueue_destroy ( cqueue* que );
 
 /* Element access */
-void* cqueue_front ( cqueue* vec );
-void* cqueue_back ( cqueue* vec );
-void* cqueue_data ( cqueue* vec );
+void* cqueue_front ( cqueue* que );
+void* cqueue_back ( cqueue* que );
+void* cqueue_data ( cqueue* que );
 
 /* Capacity */
 bool cqueue_empty ( cqueue* que );
@@ -31,8 +31,9 @@ void cqueue_reserve ( cqueue* que, size_t capacity );
 size_t cqueue_capacity ( cqueue* que );
 
 /* MODIFIERS */
-void cqueue_push ( cqueue* vec, void* elem );
-void cqueue_pop ( cqueue* vec );
+void cqueue_push ( cqueue* que, void* elem );
+void cqueue_pop ( cqueue* que );
+void cqueue_make_empty ( cqueue* que );
 
 /* Printer for debugger */
 void cqueue_print ( cqueue* que, void (*print) ( void* ) );
@@ -131,6 +132,11 @@ void cqueue_pop ( cqueue* que )
 		que->start -= re_set;
 		que->end -= re_set;
 	}
+}
+
+void cqueue_make_empty ( cqueue* que )
+{
+	que->start = que->end = (size_t)0;
 }
 
 void cqueue_print ( cqueue* que, void (*print) ( void* ) )

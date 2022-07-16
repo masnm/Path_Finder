@@ -97,12 +97,6 @@ size_t cvector_size ( cvector* vec )
 
 void cvector_reserve ( cvector* vec, size_t capacity )
 {
-	assert ( capacity <= ((size_t)1 << ((sizeof(size_t)*8)-1)) );
-	size_t count = 0;
-	for ( size_t i = 1 ; i <= capacity ; i <<= 1 ) {
-		if ( capacity & i ) ++count;
-	}
-	assert ( count == 1 && "capacity must be power of 2" );
 	vec -> capacity = capacity;
 	vec -> data = realloc ( vec->data, vec->item * vec->capacity );
 	assert ( vec -> data != NULL );
