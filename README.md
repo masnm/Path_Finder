@@ -11,3 +11,6 @@ Starter
 use `s` key to goto select mode and use `mouse left` button to first select starting pos. and the use same key to select the end pos.<br/>
 use `g` key to generate a new random maze.<br/>
 use `f` key to find start the path finder algorith to find the sortest path on the maze from start pos to end pos.<br/>
+
+### DEMO of the application
+
